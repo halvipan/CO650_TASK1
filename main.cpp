@@ -1,6 +1,6 @@
 #include <iostream>
-#include "./include/GameComponent.h"
-#include "./include/DrawableGameComponent.h"
+#include "GameComponent.h"
+#include "DrawableGameComponent.h"
 
 int GameComponent::instances = 0;
 
