@@ -10,7 +10,7 @@ using namespace std;
 class GameComponent {
 public:
     GameComponent();
-    void Update(const tm *time);
+    virtual void Update(const tm *eventTime);
 private:
     int id;
     static int instances;
