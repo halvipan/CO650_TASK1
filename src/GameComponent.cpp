@@ -3,7 +3,7 @@
 //
 
 #include <iostream>
-#include "../include/GameComponent.h"
+#include "GameComponent.h"
 
 using namespace std;
 

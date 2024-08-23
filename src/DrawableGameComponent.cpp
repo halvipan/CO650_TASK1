@@ -4,7 +4,7 @@
 
 #include <iostream>
 #include <string>
-#include "../include/DrawableGameComponent.h"
+#include "DrawableGameComponent.h"
 
 DrawableGameComponent::DrawableGameComponent(int x, int y) {
     x = 0;
