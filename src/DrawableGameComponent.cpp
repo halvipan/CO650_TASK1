@@ -6,6 +6,8 @@
 #include <string>
 #include "DrawableGameComponent.h"
 
+using namespace std;
+
 DrawableGameComponent::DrawableGameComponent(int x, int y) {
     x = 0;
     y = 0;

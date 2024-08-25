@@ -3,6 +3,8 @@
 #include "DrawableGameComponent.h"
 #include "Game.h"
 
+using namespace std;
+
 int GameComponent::instances = 0;
 
 void init() {

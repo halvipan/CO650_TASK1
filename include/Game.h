@@ -1,9 +1,6 @@
-//
-// Created by Hal Vipan on 23/08/2024.
-//
-
 #ifndef CO650_TASK1_GAME_H
 #define CO650_TASK1_GAME_H
+
 
 #include "GameComponent.h"
 
@@ -17,10 +14,10 @@ public:
     void SetInitialise(FP init);
     void SetTerminate(FP term);
 private:
-    int componentCount{};
-    GameComponent** components{};
-    FP initialise{};
-    FP terminate{};
+    int componentCount;
+    GameComponent** components;
+    FP initialise;
+    FP terminate;
     const int TICKS_1000MS = 1000;
 };
 

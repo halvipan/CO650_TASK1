@@ -1,13 +1,8 @@
-//
-// Created by Hal Vipan on 23/08/2024.
-//
-
 #ifndef CO650_TASK1_DRAWABLEGAMECOMPONENT_H
 #define CO650_TASK1_DRAWABLEGAMECOMPONENT_H
 
-#include "GameComponent.h"
 
-using namespace std;
+#include "GameComponent.h"
 
 enum Direction { Left, Right, Up, Down };
 
