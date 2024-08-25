@@ -1,7 +1,3 @@
-//
-// Created by Hal Vipan on 23/08/2024.
-//
-
 #include <thread>
 #include "Game.h"
 
@@ -9,6 +5,9 @@ using namespace std;
 
 Game::Game(int maxComponents) {
     components = new GameComponent*[maxComponents];
+    componentCount = 0;
+    initialise = nullptr;
+    terminate = nullptr;
 }
 
 void Game::Add(GameComponent* component) {

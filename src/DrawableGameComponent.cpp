@@ -1,18 +1,19 @@
-//
-// Created by Hal Vipan on 23/08/2024.
-//
-
 #include <iostream>
-#include <string>
 #include "DrawableGameComponent.h"
 
 using namespace std;
 
+// Instructions say to "Set the x and y values to zero and direction to Right"
 DrawableGameComponent::DrawableGameComponent(int x, int y) {
-    x = 0;
-    y = 0;
+    this->x = 0;
+    this->y = 0;
     direction = Right;
 }
+
+// Alternatively, use the x and y params
+//DrawableGameComponent::DrawableGameComponent(int x, int y) : x(x), y(y) {
+//    direction = Right;
+//}
 
 void DrawableGameComponent::Update(const tm *eventTime) {
     GameComponent::Update(eventTime);
@@ -33,8 +34,11 @@ void DrawableGameComponent::Draw() {
 
 void DrawableGameComponent::ChangeDirection() {
     srand(time(nullptr));
-    int cur = (int) direction;
-    int num = cur;
-    while (num == cur) num = rand() % 4;
+
+    int num = direction;
+    while (num == direction) {
+        num = rand() % 4;
+    }
+
     direction = Direction(num);
 }

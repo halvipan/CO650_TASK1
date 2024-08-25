@@ -1,7 +1,3 @@
-//
-// Created by Hal Vipan on 23/08/2024.
-//
-
 #include <iostream>
 #include "GameComponent.h"
 
