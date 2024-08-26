@@ -4,10 +4,6 @@ project(CO650_TASK1)
 set(CMAKE_CXX_STANDARD 20)
 
 include_directories(${PROJECT_SOURCE_DIR}/include)
+file(GLOB_RECURSE SOURCES ${PROJECT_SOURCE_DIR}/src/*.cpp)
 
-add_executable(CO650_TASK1 main.cpp
-        src/GameComponent.cpp
-        src/DrawableGameComponent.cpp
-        src/Game.cpp
-        src/MemberVariableUnsetException.cpp
-)
+add_executable(CO650_TASK1 main.cpp ${SOURCES})
