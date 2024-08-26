@@ -1,5 +1,6 @@
 #include <thread>
 #include "Game.h"
+#include "MemberVariableUnsetException.h"
 
 using namespace std;
 
@@ -35,6 +36,7 @@ void ComponentLoop(GameComponent* component, mutex& mtx) {
 }
 
 void Game::Run() {
+    if (initialise == nullptr) throw(MemberVariableUnsetException("initialise"));
     initialise();
 
     mutex mtx;
@@ -49,5 +51,6 @@ void Game::Run() {
         t.join();
     }
 
+    if (terminate == nullptr) throw(MemberVariableUnsetException("terminate"));
     terminate();
 }

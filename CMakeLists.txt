@@ -9,4 +9,5 @@ add_executable(CO650_TASK1 main.cpp
         src/GameComponent.cpp
         src/DrawableGameComponent.cpp
         src/Game.cpp
+        src/MemberVariableUnsetException.cpp
 )

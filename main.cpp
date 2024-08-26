@@ -2,6 +2,7 @@
 #include "GameComponent.h"
 #include "DrawableGameComponent.h"
 #include "Game.h"
+#include "MemberVariableUnsetException.h"
 
 using namespace std;
 
@@ -21,5 +22,11 @@ int main() {
     game->SetTerminate(term);
     game->Add(new GameComponent());
     game->Add(new DrawableGameComponent(0, 0));
-    game->Run();
+
+    try {
+        game->Run();
+    }
+    catch (MemberVariableUnsetException e) {
+        cout << "error: " << e.what() << ": " << e.memberVariable << endl;
+    }
 }
