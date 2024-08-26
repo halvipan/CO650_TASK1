@@ -1,5 +1,3 @@
-using namespace std;
-
 #include "MemberVariableUnsetException.h"
 
 MemberVariableUnsetException::MemberVariableUnsetException(const char* memberVariable) : memberVariable(memberVariable) {}
