@@ -22,13 +22,14 @@ void Game::SetTerminate(FP term) {
     terminate = term;
 }
 
-void ComponentLoop(GameComponent* component) {
+void ComponentLoop(GameComponent* component, mutex& mtx) {
     for (int i = 0; i < 5; ++i) {
         this_thread::sleep_for(chrono::seconds(1));
 
         time_t t = time(nullptr);
         tm* currentTime = localtime(&t);
 
+        lock_guard<mutex> lock(mtx);
         component->Update(currentTime);
     }
 }
@@ -36,11 +37,12 @@ void ComponentLoop(GameComponent* component) {
 void Game::Run() {
     initialise();
 
+    mutex mtx;
     vector<thread> threads;
 
     for (int i = 0; i < componentCount; ++i) {
-        thread t(ComponentLoop, components[i]);
-        threads.push_back(std::move(t));
+        thread t(ComponentLoop, components[i], ref(mtx));
+        threads.push_back(move(t));
     }
 
     for(thread &t : threads) {
