@@ -44,7 +44,7 @@ void Game::Run() {
 
     for (int i = 0; i < componentCount; ++i) {
         thread t(ComponentLoop, components[i], ref(mtx));
-        threads.push_back(move(t));
+        threads.push_back(std::move(t));
     }
 
     for(thread &t : threads) {
