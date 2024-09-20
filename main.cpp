@@ -26,7 +26,7 @@ int main() {
     try {
         game->Run();
     }
-    catch (MemberVariableUnsetException e) {
+    catch (MemberVariableUnsetException &e) {
         cout << "error: " << e.what() << ": " << e.memberVariable << endl;
     }
 }
