@@ -9,7 +9,7 @@ using namespace std;
 class MemberVariableUnsetException : public exception {
 public:
     MemberVariableUnsetException() = default;
-    MemberVariableUnsetException(const char* memberVariable);
+    explicit MemberVariableUnsetException(const char* memberVariable);
     const char* what() const noexcept override;
     const char* memberVariable;
 };

@@ -6,8 +6,6 @@
 
 using namespace std;
 
-int GameComponent::instances = 0;
-
 void init() {
     cout << "Initialising game" << endl;
 }

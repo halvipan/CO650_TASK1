@@ -3,6 +3,8 @@
 
 using namespace std;
 
+int GameComponent::instances = 0;
+
 GameComponent::GameComponent() {
     id = ++instances;
 }
